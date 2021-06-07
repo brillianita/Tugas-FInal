@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+
+
+    .title
+      h1 Daftar Mahasiswa Teknik Informatika
+    .container
+      .box-nav.d-flex.justify-between
+        a.border-shadow(href='/mahasiswa/add')
+          span(text-gradient)
+            i.fas.fa-plus
+            | Tambah
+      form(action='/' method='POST')
+        table.table
+          thead.thead-dark
+            tr
+              th NIM
+              th Nama
+              th Aksi
+          tbody 
+            each val, index in data
+                tr
+                    td=val.Nim
+                    td=val.Nama 
+                    td
+                        a.btn.border-shadow.update(href='/mahasiswa/'+ val.id +'/edit')
+                            span.text-gradient
+                                i.fas.fa-pencil-alt
+                        a.btn.border-shadow.delete(href='/mahasiswa/'+ val.id +'/delete')
+                            span.text-gradient
+                                i.far.fa-trash-alt
+

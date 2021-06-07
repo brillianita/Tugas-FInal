@@ -1,0 +1,20 @@
+extends layout
+
+block content 
+      .container
+        .box-nav.d-flex.justify-between
+          .filter
+            a.fas.fa-angle-double-left(href='/mahasiswa') Kembali
+        .form-title.text-center
+          h2.text-dark Tambah Data Mahasiswa
+        form(method='POST' id='update_user')
+          div(class='new_user')
+            .form-group
+              label.text-light(for='Nim') NIM
+              input(type='text' name='Nim')
+              input(type='hidden' name='_id')
+            .form-group
+              label.text-light(for='Nama') Nama
+              input(type='text' name='Nama')
+            .form-group
+              button.btn.text-dark.update(type='submit') Simpan
